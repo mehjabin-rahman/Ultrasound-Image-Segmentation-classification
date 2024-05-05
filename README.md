@@ -49,6 +49,9 @@ Our team at AF Discovery consists of highly specialized and educated researchers
 
 - Mehjabin Rahman
   - M.Sc. at Toronto Metropolitan University
+  - LinkedIn: www.linkedin.com/in/mehjabin-rahman
+
+
 
 - Seida Ahmed
   - M.Sc. at University of Toronto
@@ -103,6 +106,6 @@ Connect with me:
 ## Seida Ahmed's Individual Contribution 
 My involvement in this project begins with the initiation of the idea, derived from my personal experience.. While pregnant with my first baby, I faced the challenge of low Amniotic Fluid Volume during the third trimester, leading to an elective Cesarian Section. The inconsistent results from various check-ups made it difficult for me to make an informed decision. This made me realize that many women worldwide may face similar problems. Moreover, the limited availability of physicians in Ethiopia further highlighted the need for automation in measuring amniotic fluid levels, allowing doctors to save more lives.
 
-## Arfaa Rashid's Individual Contribution 
+## Mehjabin and Arfaa Rashid's Individual Contribution 
 - train unet, custom dataloader, similarity, working w dataset
-- to be updated..
+- worked on preprocessing, background research
