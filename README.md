@@ -1,87 +1,82 @@
-# AF Discovery -- Segment Ultrasound (US) Images for Amniotic Fluid (AF)" -- an AI4GoodLab 2023 Project
-This repository contains the code and documentation for the team **AF Discovery** as part of the **AI4GoodLab** 2023. We, a team of five, and our TA, completed this project in 3 weeks. The technical desciption is *"Machine Learning Pipeline to segment Ultrasound (US) images for Amniotic Fluid (AF)"*.
+# AF Discovery -- Segmenting Ultrasound (US) Images for Amniotic Fluid (AF) - An AI4GoodLab 2023 Project
+This repository contains the code and documentation for the team **AF Discovery**, part of the **AI4GoodLab** 2023 initiative. Our team of five, along with our TA, completed this project within a three-week timeframe. The technical description is *"Machine Learning Pipeline for Segmenting Ultrasound (US) Images to Assess Amniotic Fluid (AF)"*.
 
 ![Picture8](https://github.com/SeidaAhmed/Ultrasound-Image-Segmentation-classification/assets/65707004/1d809528-dfa8-4fdb-b565-179bca13962b)
 
+## Our Mission
+We are **AF Discovery**, dedicated to enhancing patient care for expectant mothers by equipping clinicians with a machine learning solution that facilitates timely and confident decision-making.
 
-## Our Pitch
-We’re team **AF Discovery**, and we’re going to show you how we can improve patient care for expecting mothers by helping clinicians make important, time-sensitive decisions with confidence, with the help of our machine learning solution. 
+## Importance of **AF Discovery**
+Amniotic fluid surrounds a developing fetus and its volume is critical for fetal health. Both excessive and insufficient amniotic fluid levels can lead to serious complications requiring urgent medical intervention. 
 
-## Why **AF Discovery** matters
-When a fetus is being developed in the womb, it’s surrounded by amniotic fluid. Having too much or too little amniotic fluid is both concerning and needs time-sensitive care. 
+For instance, low amniotic fluid volume (AFV) may necessitate time-sensitive decisions such as induced labor or cesarean delivery. With over 280 million women facing AFV-related complications annually, accurate and timely assessments are essential.
 
-For example, if the amniotic fluid volume, or AFV, is too low, this may lead to complications with the development of the fetus, and so patients might have to make the time-sensitive decision to undergo induced labour or C-section. 
-Over 280 million women deal with complications due to AFV annually, so it’s very important to have accurate measurements of it periodically.
+Currently, AFV calculations are performed manually by ultrasound technicians and physicians, which is time-consuming and subject to human error. In low-resource settings, the lack of time often leads to visual assessments rather than precise calculations.
 
-However, AFV needs to be calculated manually. Ultrasound technicians and even doctors themselves need to calculate it from the live ultrasound each time. This takes lots of time, and is a subjective assessment prone to error and biases. Especially in low-resource settings, doctors often don’t have the time to do proper calculations every time, and simply evaluate it visually. 
+Our solution leverages machine learning to segment fetal ultrasound images and determine AFV in real-time, thereby saving valuable time and resources for healthcare providers and empowering patients to make informed decisions.
 
-That’s where we come in. At AF Discovery, we’ve developed a machine learning model to segment fetal ultrasound images and determine the AFV in real-time. This would save doctors time and resources, while empowering patients to make decisions they’re confident in.
+## Development and Training Process
+We have developed a supervised deep learning convolutional neural network model, known as U-NET, to segment 2D fetal ultrasound images and a regression model to predict outcomes.
 
-## Our development and training process
-We’ve trained our supervised deep learning convolutional neural network model called U-NET to segment 2D fetal ultrasound images, and developed a regression model to return predicted outcomes.
+Due to the unavailability of a labeled AFV ultrasound dataset, we utilized a similar dataset of fetal head ultrasound images. Our UNET model was trained on this dataset, which was divided into labeled training and test sets. The regression model was subsequently trained using clinical measures associated with the training images. This pipeline can be adapted for AFV datasets in the future.
 
-We couldn’t get access to a dataset of labelled AFV ultrasound images, but we were able to find a very similar dataset of fetal head ultrasound images. So we trained our UNET model using this fetal head ultrasound dataset, split into labelled training and test datasets. We then trained the regression model using clinical measures that came with the images in the training set. 
-This fetal head pipeline would be easily transferable to an AFV dataset!
+The fetal head images were annotated for head circumference and preprocessed before being input into the UNET model. The regression model then utilized the UNET's segmentation predictions to estimate outcomes, specifically predicting fetal head circumference.
 
-Our fetal head images were annotated for fetal head circumference and then preprocessed as they were loaded into our UNET model. Following that, the regression model uses the UNET’s segmentation predictions to estimate the outcomes associated with each fetal head image - so it would predict the fetal head circumference. 
+## Model Performance
+While our model successfully segments fetal head ultrasound images, there is potential for improvement. Various similarity coefficients suggest that our prediction accuracy can be enhanced. Future steps will focus on refining our model and adapting it for AF datasets.
 
-## Our model performance
-Though our model was able to segment fetal head US images, there is room for improvement. Various similarity coefficients indicated that our prediction accuracy could be higher. Our next steps include improving our model and transfering it to an AF dataset.
+## Using the AF Discovery WebApp
+Users can upload screenshots of their ultrasound images and receive predicted AFV results within moments. This functionality could be extended to live video feeds, enabling real-time segmentation of ultrasound features in the future.
 
-## How to use our AF Discovery WebApp
-Users would simply upload screenshots of their ultrasound image, and then receive the predicted results of AFV within just a few moments. This could even be adapted to work with live videos, in real-time with ultrasound software, and segment even more ultrasound features in the future! 
+## Team Contact Information
+Our team at AF Discovery comprises highly skilled researchers with expertise in machine learning, computer science, and biology. We welcome any inquiries you may have!
 
-## Contact our team
-Our team at AF Discovery consists of highly specialized and educated researchers with backgrounds in machine learning, computer science, and biology. We'd be happy to answer any questions you may have!
-
-- Arfaa Rashid
-  - B.Sc. in Computer Science at the University of Windsor
+- **Arfaa Rashid**
+  - B.Sc. in Computer Science, University of Windsor
   - LinkedIn: [Arfaa's LinkedIn](https://www.linkedin.com/in/arfaa-rashid-6696-hbc/)
-  - GitHub: [Arfaa's Github](https://github.com/arfaamr)
+  - GitHub: [Arfaa's GitHub](https://github.com/arfaamr)
 
-- Ann-K Chou
-  - M.Sc. in Interactive Arts & Technology from Simon Fraser University
+- **Ann-K Chou**
+  - M.Sc. in Interactive Arts & Technology, Simon Fraser University
   - LinkedIn: [Ann-K Chou's LinkedIn](https://www.linkedin.com/in/annkchou/)
   - GitHub: [Ann-K Chou's GitHub](https://github.com/annkchou)
 
-- Huma Noor
-  - B.Sc. in Biochemical Biophysics and Bioethics from University of Toronto
+- **Huma Noor**
+  - B.Sc. in Biochemical Biophysics and Bioethics, University of Toronto
 
-- Mehjabin Rahman
-  - M.Sc. at Toronto Metropolitan University
-  - LinkedIn: www.linkedin.com/in/mehjabin-rahman
+- **Mehjabin Rahman**
+  - M.Sc., Toronto Metropolitan University
+  - LinkedIn: [Mehjabin's LinkedIn](https://www.linkedin.com/in/mehjabin-rahman)
+  - GitHub: [Mehjabin's GitHub](https://github.com/mehjabin-rahman)
 
-
-
-- Seida Ahmed
-  - M.Sc. at University of Toronto
+- **Seida Ahmed**
+  - M.Sc., University of Toronto
   - GitHub: [Seida Ahmed's GitHub](https://github.com/SeidaAhmed)
 
-- Karissa Chan (Teaching Assistant)
-  - M.Sc. at Toronto Metropolitan University
+- **Karissa Chan (Teaching Assistant)**
+  - M.Sc., Toronto Metropolitan University
   - LinkedIn: [Karissa Chan's LinkedIn](https://www.linkedin.com/in/karissa-chan/)
 
 ---
 
-## Presention and Demo
-You can access the presentation and demo of our project [here](https://www.figma.com/proto/LetYxHdyqilbbD0F1KBtLf/AF-Discovery?type=design&node-id=2-2313&scaling=scale-down&page-id=0%3A1&starting-point-node-id=9%3A6275).
+## Presentation and Demo
+Access the presentation and demo of our project [here](https://www.figma.com/proto/LetYxHdyqilbbD0F1KBtLf/AF-Discovery?type=design&node-id=2-2313&scaling=scale-down&page-id=0%3A1&starting-point-node-id=9%3A6275).
 
-## Demo of HC Predictor (gradio app) (live until Jun 20, 2023)
-![Demo of HC Predictor Screenshoot](Img/Ann-HC-gradioapp.jpg)
-You can access the demo HC Predictor (Random forest regression) [here]
-https://9cc7148ac18b49fbb0.gradio.live/     
+## Demo of HC Predictor (Gradio App) (Live until June 20, 2023)
+![Demo of HC Predictor Screenshot](Img/Ann-HC-gradioapp.jpg)
+Access the demo HC Predictor (Random Forest Regression) [here](https://9cc7148ac18b49fbb0.gradio.live/).
 
-## Technologies Used
-- Machine learning backbone: TensorFlow
-- GPU of Collab
-- IDE: Collab, Jupyter, Spyder
-- Code sharing: Collab, Google Shared Drive, GitHub
-- Serverless setup
-- Mock-up with Figma
-- Front-end deployment with Gradio
+## Technologies Utilized
+- Machine Learning Framework: TensorFlow
+- GPU: Google Colab
+- Development Environments: Colab, Jupyter, Spyder
+- Code Sharing Platforms: Colab, Google Shared Drive, GitHub
+- Serverless Architecture
+- Mock-up Design: Figma
+- Front-end Deployment: Gradio
 
-## Dataset
-We would like to acknowledge and utilize the dataset provided by Thomas L. A. van den Heuvel, Dagmar de Bruijn, Chris L. de Korte, and Bram van Ginneken in their publication titled "Automated measurement of fetal head circumference using 2D ultrasound images" [Data set]. This dataset, available at Zenodo (http://doi.org/10.5281/zenodo.1322001), served as a valuable resource for training our machine learning models. 
+## Dataset Acknowledgment
+We acknowledge the dataset provided by Thomas L. A. van den Heuvel, Dagmar de Bruijn, Chris L. de Korte, and Bram van Ginneken in their publication titled "Automated Measurement of Fetal Head Circumference Using 2D Ultrasound Images" [Data set]. This dataset, available at Zenodo (http://doi.org/10.5281/zenodo.1322001), was instrumental in training our machine learning models.
 
 ## References
 - Thomas L. A. van den Heuvel, Dagmar de Bruijn, Chris L. de Korte, and Bram van Ginneken. Automated measurement of fetal head circumference using 2D ultrasound images [Data set]. Zenodo. http://doi.org/10.5281/zenodo.1322001
